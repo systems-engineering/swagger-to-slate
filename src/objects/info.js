@@ -2,7 +2,7 @@
 function parse(info){
 
     // To store the info object
-    const res = [] 
+    const res = []
 
     if (info !== null && typeof info === 'object') {
 
@@ -15,25 +15,26 @@ function parse(info){
 
         // Set the language tab
         res.push(`language_tabs: \n   - json \n`)
-        
+
         // Include the search options
         res.push(`search: true \n`)
+        res.push(`code_clipboard: true \n`)
 
         res.push(`--- \n`)
 
         // Introduction part
-        res.push(`# Introduction \n`)
+        res.push(`# ${info.title} \n`)
 
         if ('description' in info) {
-            res.push(`${info.description} \n`) 
+            res.push(`${info.description} \n`)
         }
 
         if ('version' in info) {
-            res.push(`**Version:** ${info.version} \n`) 
+            res.push(`**Version:** ${info.version} \n`)
         }
 
     }
-    return res.length ? res.join('\n') : null 
+    return res.length ? res.join('\n') : null
 }
 
 // Export the parse object
