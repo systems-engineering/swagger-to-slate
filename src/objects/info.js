@@ -14,7 +14,7 @@ function parse(info){
         }
 
         // Set the language tab
-        res.push(`language_tabs: \n   - shell \n`)
+        res.push(`language_tabs: \n   - json \n`)
         
         // Include the search options
         res.push(`search: true \n`)
